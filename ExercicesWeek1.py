@@ -48,7 +48,7 @@ def function(n1):
         k = k - 2   # we remove 2 spaces at every run of the this loop
         
         for j in range(0, i +1): # this loop is doing the number of colums
-            print("* " + end="")
+            print("* ", end="")
    
 
         print("\r") # ending line after each row
