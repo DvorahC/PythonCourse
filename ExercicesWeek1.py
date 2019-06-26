@@ -55,4 +55,36 @@ def function(n1):
     ## THE ISSUE IS THAT i DONT GET THE EXACT SPACING BETWEEN THE STARS
 function(n1)
 
-# 5
+# 5 I dont understand, I cant manage to make this fonction work....Apprently the variable total is not correct but I wanted to set it
+# as equal to ) in order to do the calculation>
+
+n1 = int(input('Please enter a first number:'))
+n2 = int(input('Please enter a second number:'))
+operator = input('Please enter which operation you want to do between those 2 numbers: +, -, / or *: ')
+
+
+def calculation(number1, number2, operation):
+
+    total = 0  #apparently this is not correctly defined when I try to run it
+
+    if operation == '+':
+            total = number1 + number2
+     elif operation == '-':
+            total = number1 - number2
+     elif operation == '/':
+            total = number1 / number2
+     elif operation == '*':
+            total = number1 * number2
+     else:
+        raise Exception('Error')
+
+
+
+try:
+   calculation(n1, n2, operator)
+except Exception:
+    print("the operator is not valid, please try again")
+
+
+
+
