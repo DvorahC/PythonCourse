@@ -40,14 +40,20 @@ n1 = int(input('enter a number: '))
 
 def function(n1):
     k = 2 * n1 - 2  # number of spaces
-    for i in range(1, n1 + 1): # the first loop defines the number of rows
-        for j in range(1, k):
+    
+    for i in range(0, n1 + 3, 2): # the first loop defines the number of rows
+        
+        for j in range(1, k): # I understand that this loop is defining the spaces 
             print(j * " ")
-        k -= 1
-        for j in range(1, i):
-            print(j * " " + i * "*")
-        i += 2
+        k = k - 2   # we remove 2 spaces at every run of the this loop
+        
+        for j in range(0, i +1): # this loop is doing the number of colums
+            print("* " + end="")
+   
 
+        print("\r") # ending line after each row
+    
+    ## THE ISSUE IS THAT i DONT GET THE EXACT SPACING BETWEEN THE STARS
 
 function(n1)
 
