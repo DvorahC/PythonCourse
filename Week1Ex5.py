@@ -3,8 +3,10 @@
 # imprimera le résultat de l'opération sur les deux numéros.
 # Notez que si l’utilisateur n’a pas saisi d’entrées valides, vous devez l’informer poliment et demander des entrées supplémentaires.
 
-
-n1 = int(input('Please enter a first number:'))
+try:
+    n1 = int(input('Please enter a first number:'))
+except Exception:
+    print("You did not enter a number, please try again")
 n2 = int(input('Please enter a second number:'))
 operator = input('Please enter which operation you want to do between those 2 numbers: +, -, / or *: ')
 
