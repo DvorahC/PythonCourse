@@ -23,7 +23,10 @@ print("Welcome!\n"
 # GET THE USER NUMBER AND CONVERT IT INTO A LIST OF DIGITS
 def set_up_user_number():
     user_number = input('enter a 4 digits number: ')
-    user_numbers_to_list = []
+    # A cleaner way to convert a string to a number in Python would be to use list comprehensions:
+    # user_numbers_to_list = [int(digit) for digit in user_number]
+
+    user_numbers_to_list = []    
     for digit in user_number:
         user_numbers_to_list.append(int(digit))
     print(user_numbers_to_list)
@@ -33,6 +36,12 @@ def set_up_user_number():
 # DEFINE RANDOM COMPUTER NUMBER INTO A LIST
 def set_up_computer_number():
     computer_number = []
+    # Here again - notice you can use a list comprehension for a cleaner solution:
+    # computer_number = [random.randint(1, 9) for _ in range(1, 9)]
+
+    # Notice i is not used inside the loop, so naming it is a bit confusing
+    # We prefer to use _ instead, that is: for _ in range(4)
+    # for loops where we don't use the index inside
     for i in range(4):
         computer_number.append(random.randint(1, 9))
     #print(computer_number)
