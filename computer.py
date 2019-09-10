@@ -1,7 +1,7 @@
 import random
 
 
-class Numero_Secret:
+class SecretNumber:
 
     def set_up_computer_number(self):
         computer_number = [random.randint(1, 9) for _ in range(4)]
@@ -14,3 +14,4 @@ class Numero_Secret:
         for i in range(len(user_try)):
             if user_try[i] == computer_solution[i]:
                 print(f'You are good, you have some common digits, the number: {user_try[i]} in position: {i + 1}')
+
