@@ -4,15 +4,22 @@ from PythonGame.computer import SecretNumber
 import os.path
 
 
+def load_data_from_file(filename):
+    if os.path.isfile('/Users/deborahchabbat/PycharmProjects/pycourse/PythonGame/saved_info'):
+        with open(filename, 'rb') as f:
+            player_data = pickle.load(f)
+            secret_number = pickle.load(f)
+            number_of_set = pickle.load(f)
+            f.close()
+            return secret_number, player_data, number_of_set
+
+
 def play_the_game(player, computer):
     number_of_set = 0
-    if os.path.isfile('PythonGame/saved_info'):
-        with open('saved_info', 'rb') as f:
-            pickle.load(computer, f)
-            pickle.load(player, f)
-            pickle.load(number_of_set, f)
-            f.close()
-    else:
+    try:
+        computer, player, number_of_set = load_data_from_file('saved_info')
+    except FileNotFoundError:
+        pass
         a = computer.set_up_computer_number()
         while number_of_set <= 20:
             number_of_set += 1
@@ -57,4 +64,6 @@ print("Welcome!\n"
       "Good Luck!")
 
 play_the_game(player1, computer1)
+
+
 
